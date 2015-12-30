@@ -1,0 +1,49 @@
+
+世の中どんな名前があるのか興味あるよね。一覧で出してくれ
+
+SELECT
+  CustomerName AS 氏名
+FROM
+  Customers
+UNION ALL
+SELECT
+  EmployeeName AS 氏名
+FROM
+  Employees
+;
+
+3-7-1 テーブルDepartmentsとCategoriesをUNION ALLで1つにまとめなさい。
+
+SELECT
+	DepartmentID AS ID
+,	DepartmentName AS ﾌｾﾁｰ
+FROM
+	Departments
+  
+UNION ALL
+SELECT
+	CategoryID AS ID
+,	CategoryName AS ﾌｾﾁｰ
+FROM
+	Categories
+;
+
+3-7-2 テーブルDepartmentsとCategoriesをテーブル名を付してUNION ALLで1つにまとめなさい。結果をテーブル名、IDの昇順に並べなさい。
+
+SELECT 
+  'Departments' AS テーブル名  
+, DepartmentID AS ID 
+, DepartmentName AS 名前 
+FROM 
+  Departments
+UNION ALL 
+SELECT 
+  'Categories' AS テーブル名 
+, CategoryID AS ID 
+, CategoryName AS 名前 
+FROM 
+  Categories
+ORDER BY 
+  テーブル名
+, ID
+;

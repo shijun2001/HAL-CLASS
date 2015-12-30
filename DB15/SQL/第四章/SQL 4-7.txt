@@ -1,0 +1,24 @@
+
+
+4-7-1 テーブルBelongToのレコードをすべて削除しなさい。
+
+DELETE
+FROM
+  BelongTo
+;
+
+4-7-2 テーブルCustomersのレコードをすべて削除しなさい。
+
+DELETE
+FROM
+  Customers
+;
+
+
+4-7-3 テーブルSalesのレコードをすべて削除しなさい。
+
+DELETE
+	FROM
+	Sales
+;
+

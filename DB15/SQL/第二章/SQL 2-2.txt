@@ -1,0 +1,60 @@
+SQL 2-2
+
+書いてみよう:今、うちの会社が扱っている商品の名前と単価を一覧で全部出してくれ
+
+SELECT
+	ProductName
+,	Price
+FROM
+	Products
+;
+
+2-2-1:テーブルCustomersのCustomerName列、Address列を取り出しなさい。
+
+SELECT
+	CustomerName
+,	Address
+FROM
+	Customers
+;
+
+2-2-2:テーブルProductsのProductID列、ProductName列、Price列を取り出しなさい。
+
+SELECT
+	ProductID
+,	ProductName
+,	Price
+FROM
+	Products
+;
+
+2-2-3:テーブルEmployeesのEmployeeName列、EMail列、Height列を取り出しなさい。
+
+SELECT
+	EmployeeName
+,	EMail
+,	Height
+FROM
+	Employees
+;
+
+2-2-4:テーブルCustomersのCustomerCode列、CustomerName列、CustomerCode列を取り出しなさい。
+
+SELECT
+	CustomerCode
+,	CustomerName
+,	CustomerCode
+FROM
+	Customers
+;
+
+2-2-5:テーブルProductsのProductCode列、Price列、ProductName列、ProductCode列を取り出しなさい。
+
+SELECT
+	ProductCode
+,	Price
+,	ProductName
+,	ProductCode
+FROM
+	Products
+;

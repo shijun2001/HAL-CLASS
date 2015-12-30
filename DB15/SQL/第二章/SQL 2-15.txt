@@ -1,0 +1,81 @@
+SQL 2-15
+
+書いてみよう:この前の都道府県別顧客数だけど、会員種別が法人の顧客数が2人以上の都道府県だけを出してくれ
+
+SELECT
+
+;
+
+
+2-15-1:テーブルEmployeesをBirthdayで昇順に並べ、EmployeeID、EmployeeName、Birthdayを表示しなさい。
+
+SELECT
+	Birthday
+,	EmployeeID
+,	EmployeeName
+FROM
+	Employees
+ORDER BY
+	Birthday ASC
+;
+
+2-15-2:テーブルSalesをCustomerID、ProductIDで昇順、SaleDate降順に並べ、SaleID、Quantity、CustomerID、ProductID、SaleDateを表示しなさい。
+
+SELECT
+	SaleID
+,	Quantity
+,	CustomerID
+,	ProductID
+,	SaleDate
+FROM
+	Sales
+ORDER BY
+	CustomerID ASC
+,	ProductID ASC
+,	SaleDate DESC 
+;
+
+2-15-3:テーブルProductsのPriceが1,000以下のデータをCategoryIDでグループ化し、レコード数が5未満のデータをCategoryIDで昇順に並べCategoryID、レコード数を表示しなさい。
+
+SELECT 
+	CategoryID
+,	COUNT(*) AS "商品数"
+FROM
+	Products
+WHERE
+	Price <= 1000
+GROUP BY
+	CategoryID
+HAVING
+	COUNT(*) < 5
+ORDER BY
+	CategoryID ASC
+;
+
+2-15-4:テーブルSalaryをEmployeeIDでグループ化、Amountを合計し、Amount合計が多い順に並べてEmployeeID（別名は「社員ID」）、Amount合計（別名は「給与合計」）を表示しなさい。
+
+SELECT
+	EmployeeID AS "社員ID"
+,	SUM(Amount) AS "給与合計"
+FROM
+	Salary
+GROUP BY
+	EmployeeID
+ORDER BY
+	SUM(Amount) DESC
+;
+
+2-15-5:テーブルBelongToで現在所属しているEmployee（EndDateがNULL）をカウントし、レコードの多い順にDepartmentID（別名は「部署ID」）、レコード数を表示しなさい。
+
+SELECT
+	DepartmentID AS "部署ID"
+,	COUNT(*) AS "レコード数"
+FROM
+	BelongTo
+WHERE
+	EndDate IS NULL
+GROUP BY
+	DepartmentID
+ORDER BY
+	COUNT(EmployeeID) DESC
+;

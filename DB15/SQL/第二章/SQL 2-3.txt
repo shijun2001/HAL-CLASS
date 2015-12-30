@@ -1,0 +1,56 @@
+SQL 2-3
+
+書いてみよう:この前の商品名と単価の一覧だけど、項目名がわかりづらい。わかりやすいものにしてもう一度出してくれ
+
+SELECT
+	ProductName AS 商品名
+,	Price AS 単価
+FROM
+	Products
+;
+
+2-3-1:テーブルEmployeesのEmployeeNameを「社員名」という別名で取り出しなさい。
+
+SELECT
+	EmployeeName AS 社員名
+FROM
+	Employees
+;
+
+2-3-2:テーブルCustomersのCustomerCodeを「顧客コード」、CustomerNameを「顧客名」という別名で取り出しなさい。
+
+SELECT
+	CustomerCode AS 顧客コード
+,	CustomerName AS 顧客名
+FROM
+	Customers
+;
+
+2-3-3:テーブルProductsのProductCodeを「商品コード」、ProductNameを「商品名」、Priceを「価格」という別名で取り出しなさい。
+
+SELECT
+	ProductCode AS 商品コード
+,	ProductName AS 商品名
+,	Price AS 価格
+FROM
+	Products
+;
+
+2-3-4:テーブルCustomersのCustomerNameを「顧客名」、「得意先名」という別名で取り出しなさい。
+
+SELECT
+	CustomerName AS 顧客名
+,	CustomerName AS 得意先名
+FROM
+	Customers
+;
+
+2-3-5:テーブルEmployeesのEmployeeNameを「社員名」、EMailを「メールアドレス」、「連絡先」という別名で取り出しなさい。
+
+SELECT
+	EmployeeName AS 社員名
+,	EMail AS メールアドレス
+,	EMail AS 連絡先
+FROM
+	Employees
+;

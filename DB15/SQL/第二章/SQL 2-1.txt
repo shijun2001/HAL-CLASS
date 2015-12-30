@@ -1,0 +1,49 @@
+SQL 2-1
+
+書いてみよう:今、うちの会社がお付き合いしている顧客の名前を一覧で全部出してくれ
+
+SELECT
+	CustomerName
+FROM
+	Customers
+;
+
+2-1-1:テーブルCustomersのAddress列を取り出しなさい。
+
+SELECT
+	Address
+FROM
+	Customers
+;
+
+2-1-2:テーブルProductsのProductName列を取り出しなさい。
+
+SELECT
+	ProductName
+FROM
+	Products
+;
+
+2-1-3:テーブルProductsのPrice列を取り出しなさい。
+
+SELECT
+	Price
+FROM
+	Products
+;
+
+2-1-4:テーブルEmployeesのEmployeeName列を取り出しなさい。
+
+SELECT
+	EmployeeName
+FROM
+	Employees
+;
+
+2-1-5:テーブルEmployeesのEMail列を取り出しなさい。
+
+SELECT
+	EMail
+FROM
+	Employees
+;

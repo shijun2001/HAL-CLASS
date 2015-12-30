@@ -1,0 +1,83 @@
+SQL 2-10
+
+書いてみよう:うちの商品を価格帯別でランク付けしてみるとどうなるだろうか。ちょっと調べてくれ
+
+SELECT
+	ProductName AS "商品名"
+, CASE
+    WHEN Price < 1000 THEN 'C'
+    WHEN Price < 2000 THEN 'B'
+    ELSE 'A'
+  END AS "ランク"
+FROM
+	Products
+;
+
+2-10-1:テーブルEmployeesを身長によって160未満を「A」、160以上170未満を「B」、170以上180未満を「C」、180以上を「D」にランク分けし、EmployeeName（「社員名」という別名をつける）と「ランク」を表示しなさい。
+
+SELECT
+	EmployeeName AS "社員名"
+, CASE
+    WHEN Height < 160 THEN 'A'
+    WHEN Height < 170 THEN 'B'
+    WHEN Height < 180 THEN 'C'
+    ELSE 'D'
+  END AS "ランク"
+FROM
+	Employees
+;
+
+2-10-2:テーブルSalaryをAmountによって150,000未満を「D」、150,000以上300,000未満を「C」、300,000以上500,000未満を「B」、500,000以上を「A」にランク分けし、SalaryID、ランクを表示しなさい。
+
+SELECT
+	SalaryID AS "給与ID"
+, CASE
+    WHEN Amount < 150000 THEN 'D'
+    WHEN Amount < 300000 THEN 'C'
+    WHEN Amount < 500000 THEN 'B'
+    ELSE 'A'
+  END AS "ランク"
+FROM 
+	Salary
+;
+
+2-10-3:テーブルEmployeesを体重によって60未満を「A」、60以上70未満を「B」、70以上80未満を「C」、80以上を「D」にランク分けし、EmployeeName、ランクを表示しなさい。
+
+SELECT
+	EmployeeName AS "社員名" 
+, CASE
+	WHEN Weight < 60 THEN 'A'
+    WHEN Weight < 70 THEN 'B'
+    WHEN Weight < 80 THEN 'C'
+    ELSE 'D'
+  END AS "ランク"
+FROM
+	Employees
+;
+
+2-10-4:テーブルSalesをQuantityによって、10以上を「A」、10未満を「B」にランク分けし、SaleID（「販売ID」という別名をつける）、ランクを表示しなさい。
+
+SELECT
+	SaleID AS "販売ID"
+,CASE
+	WHEN Quantity < 10 THEN 'B'
+	ELSE 'A'
+  END AS "ランク"
+FROM
+	Sales
+;
+
+2-10-5:テーブルEmployeesを身長によって160未満を「A」、160以上170未満を「B」、170以上180未満を「C」、180以上を「D」にランク分けし、EmployeeName（「社員名」と別名をつける）、Height（「身長」と別名をつける）とランクを表示しなさい。
+
+SELECT
+	EmployeeName AS "社員名"
+,	Height AS "身長"
+,CASE
+	WHEN Height < 160 THEN 'A'
+	WHEN Height < 170 THEN 'B'
+	WHEN Height < 180 THEN 'C'
+	ELSE 'D'
+  END AS "ランク"
+FROM
+	Employees
+;

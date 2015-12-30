@@ -1,0 +1,30 @@
+
+
+4-8-1
+
+DELETE
+FROM
+  Sales
+WHERE
+  SaleID=1006
+;
+
+4-8-2
+
+DELETE
+FROM
+  Salary
+WHERE
+ EmployeeID  = 10
+  AND
+ PayDate  = '2007-10-01'
+;
+
+4-8-3
+
+DELETE
+FROM
+  Customers
+WHERE
+ CustomerID >= 10000
+;

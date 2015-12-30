@@ -1,0 +1,53 @@
+SQL 2-16
+
+書いてみよう:顧客の中で同じ住所のデータがあるよね。住所だけで一覧を出してくれ。ダブってるのはまとめてくれて構わないから
+
+SELECT
+
+;
+
+
+2-16-1:テーブルEmployeesから重複を除いてHireFiscalYearを求めなさい。
+
+SELECT DISTINCT
+	HireFiscalYear
+FROM
+	Employees
+;
+
+2-16-2:テーブルSalesから重複を除いてCustomerID、ProductIDを求めなさい。
+
+SELECT DISTINCT
+	CustomerID
+,	ProductID
+FROM
+	Sales
+;
+
+2-16-3:テーブルCustomersから重複を除いて、CustomerClassID、PrefecturalIDを求めなさい。
+
+SELECT DISTINCT
+	CustomerClassID
+,	PrefecturalID
+FROM
+	Customers
+;
+
+2-16-4:テーブルSalesから重複を除いてCustomerID、ProductID、EmployeeIDを求めなさい。結果を第2問の結果と比較しなさい。
+
+SELECT DISTINCT
+	CustomerID
+,	ProductID
+,	EmployeeID
+FROM
+	Sales
+;
+
+2-16-5:テーブルProductsから重複を除いてPrice、CategoryIDを求めなさい。
+
+SELECT DISTINCT
+	Price
+,	CategoryID
+FROM
+	Products
+;

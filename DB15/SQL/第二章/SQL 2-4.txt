@@ -1,0 +1,50 @@
+SQL 2-4
+
+書いてみよう:この前の商品名と単価の一覧だけど、消費税が含まれてない。単価に消費税を足してもう一度出してくれ
+
+SELECT
+	ProductName AS 商品名
+,	Price * 1.05 AS 税込価格
+FROM
+	Products
+;
+
+2-4-1:テーブルSalaryで、Amountの15％を求め、「給与の15％」（％は全角にすること）という別名で取り出しなさい。
+
+SELECT
+	Amount * 0.15 AS "給与の15％"
+FROM
+	Salary
+;
+
+2-4-2:テーブルEmployeesで、Heightの半分を求めなさい。別名は「身長の半分」とする。
+
+SELECT
+	Height * 0.5 AS 身長の半分
+FROM
+	Employees
+;
+
+2-4-3:テーブルEmployeesで、Weightの3倍から50を引いたものを求めなさい。別名は「体重の3倍引く50」とする。
+
+SELECT
+	Weight * 3 - 50 AS "体重の3倍引く50"
+FROM
+	Employees
+;
+
+2-4-4:テーブルProductsで、Priceに100を加え、その30％を求めなさい。別名は「（価格＋100）の30％」（カッコや＋や％は全角）とする。
+
+SELECT
+	(Price + 100) * 0.3 AS "（価格＋100）の30％"
+FROM
+	Products
+;
+
+2-4-5:テーブルSalesで、Quantityに200を加え、3で割ったものを求めなさい。別名は「（数量＋200）÷3」（カッコや＋や÷は全角）とする。
+
+SELECT
+	(Quantity + 200) / 3 AS "（数量＋200）÷3"
+FROM
+	Sales
+;

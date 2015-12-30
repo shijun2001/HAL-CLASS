@@ -1,0 +1,49 @@
+SQL 2-5
+
+書いてみよう:社員の肥満度が気になる。BMIで計算して一覧を出してくれ。名前は出さなくても構わない
+
+SELECT
+	Weight / (Height / 100) / (Height / 100) AS BMI
+FROM
+	Employees
+;
+
+2-5-1:テーブルEmployeesで、Heightの3倍からWeightの2.5倍を引いたものを求めなさい。別名は結果とします。
+
+SELECT
+	Height * 3 - Weight * 2.5 AS 結果
+FROM
+	Employees
+;
+
+2-5-2:テーブルEmployeesで、HireFiscalYearをWeightで割ってHeightに加えたものを求めなさい。別名は結果とします。
+
+SELECT
+	HireFiscalYear / Weight + Height AS 結果
+FROM
+	Employees
+;
+
+2-5-3:テーブルSalesで、QuantityにCustomerID、ProductID、EmployeeIDの積を加えたものを求めなさい。別名は結果とします。
+
+SELECT
+	Quantity + CustomerID * ProductID * EmployeeID AS 結果
+FROM
+	Sales
+;
+
+2-5-4:テーブルProductsで、PriceからProductCode、CategoryIDの積を引いたものを求めなさい。別名は結果とします。
+
+SELECT
+	Price - ProductCode * CategoryID AS 結果
+FROM
+	Products
+;
+
+2-5-5:テーブルCustomersで、CustomerIDにCustomerClassIDの3乗を加えたものを求めなさい。別名は結果とします。
+
+SELECT
+	CustomerID + (CustomerClassID * CustomerClassID * CustomerClassID) AS 結果
+FROM
+	Customers
+;

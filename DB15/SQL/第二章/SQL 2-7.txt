@@ -1,0 +1,51 @@
+SQL 2-7
+
+書いてみよう:うちの商品って、平均単価いくらくらいなの？　ちょっと教えて
+
+SELECT
+	AVG(Price) AS 平均単価
+FROM
+	Products
+;
+
+2-7-1:テーブルCustomersの顧客数を求めて、「お得意様数」と別名をつけなさい。
+
+SELECT
+	COUNT(CustomerID) AS お得意様数
+FROM
+	Customers
+;
+
+
+2-7-2:テーブルEmployeesのWeight合計を求め、「社員体重合計」と別名をつけなさい。
+
+SELECT
+	SUM(Weight) AS 社員体重合計
+FROM
+	Employees
+;
+
+2-7-3:テーブルProductsのPriceの最大値を求め、「最高額価格」と別名をつけなさい。
+
+SELECT
+	MAX(Price) AS "最高額価格"
+FROM
+	Products
+;
+
+2-7-4:テーブルEmployeesのWeightの最小値を求め、「最軽量体重」と別名をつけなさい。
+
+SELECT
+	MIN(Weight) AS "最軽量体重"
+FROM
+	Employees
+;
+
+2-7-5:テーブルEmployeesのHeight、Weightの平均値を求め、「平均身長」,「平均体重」と別名をつけなさい。
+
+SELECT
+	AVG(Height) AS "平均身長"
+,	AVG(Weight) AS "平均体重"
+FROM
+	Employees
+;

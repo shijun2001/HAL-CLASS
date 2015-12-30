@@ -1,0 +1,92 @@
+SQL 2-13
+
+書いてみよう:この前の都道府県別顧客数だけど、会員種別が法人の顧客数が2人以上の都道府県だけを出してくれ
+
+SELECT
+	PrefecturalID AS "都道府県"
+,	COUNT(*) AS "顧客数"
+FROM
+	Customers
+WHERE
+	CustomerClassID = 1
+GROUP BY
+	PrefecturalID
+HAVING
+	COUNT(*) >= 2
+;
+
+
+2-13-1:テーブルCustomersをPrefecturalIDでグループ化したとき、PrefecturalIDが10以上で複数の顧客を持つPrefecturalID、レコード数を表示しなさい。
+
+SELECT
+	PrefecturalID AS "県ID"
+,	COUNT(*) AS "顧客数"
+FROM 
+	Customers
+WHERE
+	PrefecturalID >= 10
+GROUP BY 
+	PrefecturalID
+HAVING 
+	COUNT(*) > 1 
+;
+
+2-13-2:テーブルSalaryからレコード数が12以上、EmployeeIDが20以上のEmployeeIDとレコード数を取り出しなさい。
+
+SELECT
+	EmployeeID AS "社員ID"
+,	COUNT(*) AS "支給回数"
+FROM
+	Salary
+WHERE
+	EmployeeID >= 20
+GROUP BY
+	EmployeeID
+HAVING
+	COUNT(*) >= 12
+;
+
+2-13-3:テーブルSalesをProductIDでグループ化し、レコードを30以上持ち、かつProductIDが20以上30以下のProductIDとそのレコード数を表示しなさい。
+
+SELECT
+	ProductID AS "商品ID"
+,	COUNT(*) AS "売上レコード数"
+FROM
+	Sales
+WHERE
+	ProductID >= 20 AND ProductID <= 30 
+GROUP BY
+	ProductID
+HAVING
+	COUNT(*) >= 30 
+;
+
+2-13-4:テーブルEmployeesをBloodTypeでグループ化したとき、Heightが165以上の社員データを5件以上持つBloodType（別名は「血液型」）、データ数（別名は「データ件数」）を表示しなさい。
+
+SELECT
+	BloodType AS "血液型"
+,	COUNT(*) AS "データ件数"
+FROM
+	Employees
+WHERE
+	Height >= 165
+GROUP BY
+	BloodType
+HAVING
+	COUNT(*) >= 5
+;
+
+2-13-5:テーブルSalesをProductIDでグループ化したとき、SaleDateが2007-06-01以降でQuantityの合計が200以上のProductID（別名は「商品ID」）、Quantity合計（別名は「数量合計」）を表示しなさい。
+
+SELECT
+	ProductID AS "商品ID"
+,	SUM(Quantity) AS "数量合計"
+FROM
+	Sales
+WHERE
+	SaleDate >= '2007-06-01'
+GROUP BY
+	ProductID
+HAVING	
+	SUM(Quantity) >= 200
+;

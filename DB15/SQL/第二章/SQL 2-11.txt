@@ -1,0 +1,71 @@
+SQL 2-11
+
+書いてみよう:都道府県別に、それぞれ何人ずつ顧客がいるのか教えてくれ
+
+SELECT
+	PrefecturalID AS "都道府県"
+,	COUNT(*) AS "顧客数"
+FROM
+	Customers
+GROUP BY
+	PrefecturalID
+;
+
+2-11-1:テーブルSalesをCustomerIDでグループ化し、CustomerIDごとの件数を求めなさい。
+
+SELECT
+	CustomerID AS "顧客ID"
+,	COUNT(*) AS "件数"
+FROM
+	Sales
+GROUP BY
+	CustomerID
+;
+
+2-11-2:テーブルSalaryをEmployeeIDでグループ化し、EmployeeIDごとのAmount合計を求めなさい。
+
+SELECT
+	EmployeeID AS "社員ID"
+,	SUM(Amount) AS "合計"
+FROM
+	Salary
+GROUP BY
+	EmployeeID
+;
+
+2-11-3:テーブルSalesをCustomerID、ProductIDでグループ化し、CustomerID、ProductIDごとのQuantity合計を求めなさい。
+
+SELECT
+	CustomerID AS "顧客ID"
+,	ProductID AS "商品ID"
+,	SUM(Quantity) AS "数量"
+FROM
+	Sales
+GROUP BY
+	CustomerID
+,	ProductID 
+;
+
+2-11-4:テーブルEmployeesをBloodType（「血液型」と別名をつける）でグループ化し、Height、Weightの平均値（それぞれ別名は「平均身長」、「平均体重」とします）を求めなさい。
+
+SELECT
+	BloodType AS "血液型"
+,	AVG(Height) AS "平均身長"
+,	AVG(Weight) AS "平均体重"
+FROM
+	Employees
+GROUP BY
+	BloodType
+;
+
+2-11-5:テーブルSalaryをEmployeeID（別名は「社員ID」）でグループ化し、レコード数（別名は「支給回数」）、Amountの平均値（別名は「平均支給額」）を求めなさい。
+
+SELECT
+	EmployeeID AS "社員ID"
+,	COUNT(*) AS "支給回数"
+,	AVG(Amount) AS "平均支給額"
+FROM
+	Salary
+GROUP BY
+	EmployeeID
+;

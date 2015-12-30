@@ -1,0 +1,67 @@
+SQL 2-8
+
+書いてみよう:うちの会社でバスケットボールのチームを作ろうと思う。ついては、背の高い人をピックアップしてくれ
+
+SELECT
+	EmployeeName AS "氏名"
+FROM
+	Employees
+WHERE
+	Height >= 180
+;
+
+2-8-1:テーブルProductsからPriceが2,500以上のProductNameを取り出しなさい。
+
+SELECT
+	ProductName
+FROM
+	Products
+WHERE
+	Price >= 2500
+;
+
+2-8-2:テーブルEmployeesからWeightが70以上のEmployeeName, Weightを取り出しなさい。
+
+SELECT
+	EmployeeName
+,	Weight
+FROM
+	Employees
+WHERE
+	Weight >= 70
+;
+
+2-8-3:テーブルEmployeesからHeightが160以上180以下のEmployeeName、Heightを取り出しなさい。
+
+SELECT
+	EmployeeName
+,	Height
+FROM
+	Employees
+WHERE
+	Height BETWEEN 160 AND 180
+;
+
+2-8-4:テーブルSalesからSaleDateが2007年6月1日以降のSaleIDを取り出しなさい。SaleDateの表記は「2007-06-01」となっています。
+
+SELECT
+	SaleID
+FROM
+	Sales
+WHERE
+	SaleDate >= '2007-06-01'
+;
+
+2-8-5:テーブルEmployeesからHeightが170以上、Weightが60以上のEmployeeName,Height,Weightを取り出しなさい。
+
+SELECT
+	EmployeeName
+,	Height
+,	Weight
+FROM
+	Employees
+WHERE
+	Height >= 170 
+	AND
+	Weight >= 60
+;

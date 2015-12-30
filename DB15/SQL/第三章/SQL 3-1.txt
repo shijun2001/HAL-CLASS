@@ -1,0 +1,70 @@
+
+
+
+形態一 
+
+SELECT							主問い合わせ
+	ProductName
+,	Price
+FROM
+	Products
+WHERE
+	CategoryID IN
+	(
+		SELECT					副問い合わせ
+			CategoryID
+		FROM
+			Categories
+		WHERE
+			CategoryName IN('魚','肉')
+	)
+;
+
+
+
+形態二
+
+SELECT
+	ProductName
+,	Price
+FROM
+	Products
+JOIN	
+	Categories
+ON
+	Products.CategoryID = Categories.CategoryID
+WHERE
+	CategoryName IN('魚','肉')
+;
+
+
+
+形態三
+
+SELECT
+	ProductName
+,	Price
+FROM
+	Products
+,	Categories
+WHERE
+	Products.CategoryID = Categories.CategoryID
+AND
+	CategoryName IN('魚','肉')
+;
+
+
+
+形態四
+
+SELECT
+	ProductName
+,	Price
+FROM
+	Products AS "製品"
+,	Categories AS "カテゴリー"
+WHERE
+　 "製品".CategoryID = "カテゴリー".CategoryID
+AND
+	CategoryName IN('魚','肉')
+;

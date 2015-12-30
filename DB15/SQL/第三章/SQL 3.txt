@@ -1,0 +1,47 @@
+
+内連接
+
+形態一 
+
+SELECT
+	CustomerID,CustomerCode,CustomerName,Address,CustomerClassID,Customers.PrefecturalID,PrefecturalName
+FROM
+	Customers
+JOIN
+	Prefecturals
+ON
+	Customers.PrefecturalID = Prefecturals.PrefecturalID
+ORDER BY
+	Customers.PrefecturalID ASC
+;
+
+
+形態二
+
+SELECT
+	CustomerID,CustomerCode,CustomerName,Address,CustomerClassID,Customers.PrefecturalID,PrefecturalName
+FROM
+	Customers,Prefecturals
+WHERE
+	Customers.PrefecturalID = Prefecturals.PrefecturalID
+ORDER BY
+	Customers.PrefecturalID ASC
+;
+
+
+
+外連接
+
+SELECT
+SaleID,SaleDate,Products.ProductID,ProductName,CategoryName
+FROM
+Sales
+LEFT OUTER JOIN
+Products
+ON
+Sales.ProductID = Products.ProductID
+LEFT OUTER JOIN
+Categories
+ON
+Products.CategoryID = Categories.CategoryID
+;

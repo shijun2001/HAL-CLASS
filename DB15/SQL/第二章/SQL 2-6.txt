@@ -1,0 +1,50 @@
+SQL 2-6
+
+書いてみよう:今度のイベント用に、お客様の名札を作ってくれ。ちゃんと『様』を付けてくれよ
+
+SELECT
+	CustomerName || '様' AS お名前
+FROM
+	Customers
+;
+
+2-6-1:テーブルEmployeesのEmployeeNameの後に'さん'を連結して「社員名」という別名をつけなさい。
+
+SELECT
+	EmployeeName || 'さん' AS 社員名
+FROM
+	Employees
+;
+
+
+2-6-2:テーブルEmployeesのEMailの前に「E-MAIL:」を連結して、「メールアドレス」という別名をつけなさい。
+
+SELECT
+	'E-MAIL:' || EMail AS メールアドレス
+FROM
+	Employees
+;
+
+2-6-3:テーブルEmployeesのEmployeeNameの後に「さんの」を連結、EMailの前に「E-MAIL:」を連結してその2つをさらにに連結、「連絡先」という別名をつけなさい。
+
+SELECT
+	EmployeeName || 'さんの' || 'E-MAIL:' || EMail AS 連絡先
+FROM
+	Employees
+;
+
+2-6-4:テーブルCustomersのCustomerName、Addressを用いて「○○様のお住まいは△△」を組み立て、「お得意様連絡先」と別名をつけなさい。
+
+SELECT
+	CustomerName || '様のお住まいは' || Address AS お得意様連絡先
+FROM
+	Customers
+;
+
+2-6-5:テーブルEmployeesのEmployeeName、BloodTypeを用いて「社員○○さんの血液型は△△型」を組み立て「社員血液型」と別名をつけなさい。
+
+SELECT
+	'社員' || EmployeeName || 'さんの血液型は' || BloodType || '型'  AS 社員血液型
+FROM
+	Employees
+;

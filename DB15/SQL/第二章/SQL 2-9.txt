@@ -1,0 +1,66 @@
+SQL 2-9
+
+書いてみよう:最近の女性の名前って、昔みたいに～子ってつく人少ない気がするんだよな。うちの会社だと何人いるんだろう
+
+SELECT
+	COUNT(*) AS "子のつく社員の人数"
+FROM
+	Employees
+WHERE
+	EmployeeName LIKE '%子'    
+;
+
+2-9-1:テーブルCustomersからCustomerNameに'株式会社'を含むCustomerNameを取り出しなさい。
+
+SELECT
+	CustomerName AS "会社名"
+FROM
+	Customers
+WHERE
+	CustomerName LIKE '%株式会社%'
+;
+
+2-9-2:テーブルEmployeesからEmployeeNameに'ー'を含むレコードのHeightの平均を求めなさい。
+
+SELECT
+	AVG(Height) AS "平均身長"
+FROM
+	Employees
+WHERE
+	EmployeeName LIKE '%ー%'    
+;
+
+2-9-3:テーブルCustomersからCustomerNameに'株式会社'を含まないレコードの件数を求めなさい。
+
+SELECT
+	COUNT(*) AS "顧客数"
+FROM
+	Customers
+WHERE
+	CustomerName NOT LIKE '%株式会社%'    
+;
+
+2-9-4:テーブルEmployeesからEmployeeNameに'リ'を含み、身長が160以下のEmployeeName,Heightを取り出しなさい。
+
+SELECT
+	EmployeeName
+,	Height
+FROM
+	Employees
+WHERE
+	EmployeeName LIKE '%リ%'
+	AND
+	Height <= 160
+;
+
+2-9-5:テーブルCustomersからCustomerNameに'株式会社'を含まず、Addressに'江戸川区'を含むレコードを取り出しなさい。
+
+SELECT
+	*
+FROM
+	Customers
+WHERE
+	CustomerName NOT LIKE '%株式会社%'
+	AND
+	Address LIKE '%江戸川区%'
+;
